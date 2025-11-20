@@ -142,7 +142,7 @@ Given commands like:
 
 "What's today's weather?"
 
-"Who won the cricket match?"
+"Who is the prime minister of India?"
 
 Assistant will respond via voice and, if required, display relevant text/actions (i.e., open web links, read out news, or answer generative questions).
 
