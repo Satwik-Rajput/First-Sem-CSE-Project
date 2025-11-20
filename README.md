@@ -1,10 +1,10 @@
-# First-Sem-CSE-Project
+# Voice-Activated Virtual Assistant in Python
 README: Voice-Activated Virtual Assistant ("Jarvis")
 
-#Problem Statement
+# Problem-Statement
 Design and implement a Python-based voice-activated virtual assistant, "Jarvis", which listens for a wake word, recognizes speech commands, accesses web resources (such as news, Google, YouTube, LinkedIn, and GitHub), reads news aloud, and utilizes AI to process general questions with context-aware responses. The assistant must use speech recognition, text-to-speech, web API requests, and generative AI models, demonstrating integration of multiple Python modules for robust, real-time user interaction.
 
-#Theory and Concepts
+# Theory and Concepts
 
 This project combines the following technologies:
 
@@ -31,9 +31,9 @@ pip install SpeechRecognition pyttsx3 requests google-generativeai
 
 You may need to separately arrange credentials and API keys for newsapi.org and Google Gemini (via Google Cloud Console).
 
-#Code Breakdown and Major Statements
+# Code Breakdown and Major Statements
 
-#1. Initialization
+# 1. Initialization
 The assistant initializes the speech recognizer, text-to-speech engine, and API keys.
 
     import speech_recognition as sr
@@ -48,7 +48,7 @@ The assistant initializes the speech recognizer, text-to-speech engine, and API 
 
 Purpose: Prepares all modules and keys, making the assistant ready for listening and responding.
 
-#2. Text-to-Speech Function
+# 2. Text-to-Speech Function
 Converts text responses to audible speech.
 
     python
@@ -57,7 +57,7 @@ Converts text responses to audible speech.
     engine.runAndWait()
 Usage: Called whenever Jarvis needs to vocalize feedback or information.
 
-#3. AI Processing via Gemini
+# 3. AI Processing via Gemini
 Handles generic, non-predefined queries using generative AI.
 
     python
@@ -73,7 +73,7 @@ Handles generic, non-predefined queries using generative AI.
     return response.text
 Usage: Delegates open-ended questions to Google Gemini and returns concise AI-generated answers.
 
-#4. Command Processing Logic
+# 4. Command Processing Logic
 Decides action based on keywords found in recognized text commands.
 
     python
@@ -98,7 +98,7 @@ Decides action based on keywords found in recognized text commands.
         speak(output)
 Purpose: Matches user intentions with functions like browsing, news fetching, or AI Q&A.
 
-#5. Main Loop and Voice Interaction
+# 5. Main Loop and Voice Interaction
 Continuously listens for the wake word ("Jarvis"), activates upon recognition, processes the next command, and responds.
 
     python
@@ -129,7 +129,7 @@ Continuously listens for the wake word ("Jarvis"), activates upon recognition, p
             print("Error;{0}".format(e))
 Usage: Ensures hands-free activation and query processing pipeline.
 
-Demonstration & Usage
+# Demonstration & Usage
 Run the script and allow microphone access.
 
 Say "Jarvis" to activate the assistant.
@@ -146,10 +146,10 @@ Given commands like:
 
 Assistant will respond via voice and, if required, display relevant text/actions (i.e., open web links, read out news, or answer generative questions).
 
-Conclusion
+# Conclusion
 This project demonstrates voice-driven automation and intelligent Q&A using a combination of speech recognition, web APIs, and generative AI. It shows how Python can integrate hardware input (microphone), cloud AI, and real-time web resources for a natural interaction experience in virtual assistant projects.
 
-References:
+# References:
 SpeechRecognition documentation, pyttsx3 documentation, NewsAPI docs
 Google Generative AI (Gemini), Python module docs
 
