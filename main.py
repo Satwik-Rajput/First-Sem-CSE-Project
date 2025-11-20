@@ -11,10 +11,10 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-newsapi = "024bf56f716147049e0f1282fa821c67"
+newsapi = "You News API Key"
 
 def aiprocess(command):
-    client = genai.Client(api_key="AIzaSyDTvEJqJhiBXXaAa3dW_vWKlMrriC_CGI8")
+    client = genai.Client(api_key="Your API Key")
     response = client.models.generate_content(
         model = "gemini-2.5-flash",
         contents=[
@@ -81,4 +81,5 @@ if __name__ == "__main__":
 
         except Exception as e:
             print("Error;{0}".format(e))
+
             # speak("Sorry, I didn't understand that. Please try again.")
