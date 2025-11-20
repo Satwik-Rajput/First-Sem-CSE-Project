@@ -11,7 +11,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-newsapi = "You News API Key"
+newsapi = "Your News API Key"
 
 def aiprocess(command):
     client = genai.Client(api_key="Your API Key")
@@ -83,3 +83,4 @@ if __name__ == "__main__":
             print("Error;{0}".format(e))
 
             # speak("Sorry, I didn't understand that. Please try again.")
+
