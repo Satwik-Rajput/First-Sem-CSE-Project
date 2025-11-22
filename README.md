@@ -6,17 +6,17 @@ Design and implement a Python-based voice-activated virtual assistant, "Jarvis",
 
 # Theory and Concepts
 
-This project combines the following technologies:
+* This project combines the following technologies:
 
-Speech Recognition: Converts spoken language into text, allowing hands-free interaction.
+* Speech Recognition: Converts spoken language into text, allowing hands-free interaction.
 
-Text-to-Speech (TTS): Enables Jarvis to respond vocally, providing auditory feedback.
+* Text-to-Speech (TTS): Enables Jarvis to respond vocally, providing auditory feedback.
 
-Web API Integration: Fetches dynamic information (news) from web sources using APIs.
+* Web API Integration: Fetches dynamic information (news) from web sources using APIs.
 
-Web Automation: Opens various websites upon command.
+* Web Automation: Opens various websites upon command.
 
-Generative AI: Responds to non-predefined queries using Google's generative AI (Gemini).
+* Generative AI: Responds to non-predefined queries using Google's generative AI (Gemini).
 
 | Module                  | Purpose                                                  |
 | ----------------------- | -------------------------------------------------------- |
@@ -26,15 +26,15 @@ Generative AI: Responds to non-predefined queries using Google's generative AI (
 | requests                | Makes HTTP requests for fetching web data (news API).    |
 | google.genai            | Connects to Google Gemini API for generative AI answers. |
 
-#You can install required modules with:
-pip install SpeechRecognition pyttsx3 requests google-generativeai
+#### You can install required modules with:
+* pip install SpeechRecognition pyttsx3 requests google-generativeai
 
-You may need to separately arrange credentials and API keys for newsapi.org and Google Gemini (via Google Cloud Console).
+* You may need to separately arrange credentials and API keys for newsapi.org and Google Gemini (via Google Cloud Console).
 
 # Code Breakdown and Major Statements
 
 # 1. Initialization
-The assistant initializes the speech recognizer, text-to-speech engine, and API keys.
+### The assistant initializes the speech recognizer, text-to-speech engine, and API keys.
 
     import speech_recognition as sr
     import pyttsx3
@@ -46,19 +46,19 @@ The assistant initializes the speech recognizer, text-to-speech engine, and API 
     engine = pyttsx3.init()
     newsapi = "YOUR_NEWSAPI_KEY"
 
-Purpose: Prepares all modules and keys, making the assistant ready for listening and responding.
+### Purpose: Prepares all modules and keys, making the assistant ready for listening and responding.
 
 # 2. Text-to-Speech Function
-Converts text responses to audible speech.
+### Converts text responses to audible speech.
 
     python
     def speak(text):
     engine.say(text)
     engine.runAndWait()
-Usage: Called whenever Jarvis needs to vocalize feedback or information.
+### Usage: Called whenever Jarvis needs to vocalize feedback or information.
 
 # 3. AI Processing via Gemini
-Handles generic, non-predefined queries using generative AI.
+### Handles generic, non-predefined queries using generative AI.
 
     python
     def aiprocess(command):
@@ -71,10 +71,10 @@ Handles generic, non-predefined queries using generative AI.
         ],
     )
     return response.text
-Usage: Delegates open-ended questions to Google Gemini and returns concise AI-generated answers.
+### Usage: Delegates open-ended questions to Google Gemini and returns concise AI-generated answers.
 
 # 4. Command Processing Logic
-Decides action based on keywords found in recognized text commands.
+### Decides action based on keywords found in recognized text commands.
 
     python
     def processcommand(c):
@@ -96,10 +96,10 @@ Decides action based on keywords found in recognized text commands.
         output = aiprocess(c)
         print(output)
         speak(output)
-Purpose: Matches user intentions with functions like browsing, news fetching, or AI Q&A.
+### Purpose: Matches user intentions with functions like browsing, news fetching, or AI Q&A.
 
 # 5. Main Loop and Voice Interaction
-Continuously listens for the wake word ("Jarvis"), activates upon recognition, processes the next command, and responds.
+### Continuously listens for the wake word ("Jarvis"), activates upon recognition, processes the next command, and responds.
 
     python
     if __name__ == "__main__":
@@ -127,32 +127,32 @@ Continuously listens for the wake word ("Jarvis"), activates upon recognition, p
 
         except Exception as e:
             print("Error;{0}".format(e))
-Usage: Ensures hands-free activation and query processing pipeline.
+### Usage: Ensures hands-free activation and query processing pipeline.
 
 # Demonstration & Usage
-Run the script and allow microphone access.
+* Run the script and allow microphone access.
 
-Say "Jarvis" to activate the assistant.
+* Say "Jarvis" to activate the assistant.
 
-Given commands like:
+* Given commands like:
 
-"Open Google"
+* "Open Google"
 
-"News"
+* "News"
 
-"What's today's weather?"
+* "What's today's weather?"
 
-"Who is the prime minister of India?"
+* "Who is the prime minister of India?"
 
-Assistant will respond via voice and, if required, display relevant text/actions (i.e., open web links, read out news, or answer generative questions).
+* Assistant will respond via voice and, if required, display relevant text/actions (i.e., open web links, read out news, or answer generative questions).
 
 # Conclusion
 This project demonstrates voice-driven automation and intelligent Q&A using a combination of speech recognition, web APIs, and generative AI. It shows how Python can integrate hardware input (microphone), cloud AI, and real-time web resources for a natural interaction experience in virtual assistant projects.
 
 # References:
-SpeechRecognition documentation, pyttsx3 documentation, NewsAPI docs
-Google Generative AI (Gemini), Python module docs
+* SpeechRecognition documentation, pyttsx3 documentation, NewsAPI docs
+* Google Generative AI (Gemini), Python module docs
 
-Feel free to adjust the API keys and customize more code comments for your submission requirements.
+* Feel free to adjust the API keys and customize more code comments for your submission requirements.
 
-Unlock web app generation
+* Unlock web app generation
